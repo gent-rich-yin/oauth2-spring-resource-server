@@ -12,7 +12,7 @@ public class ResourceServerConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.mvcMatcher("/**")
+        http.cors().and().mvcMatcher("/**")
             .authorizeRequests()
                 .anyRequest().authenticated()
 //            .mvcMatchers("/articles")
